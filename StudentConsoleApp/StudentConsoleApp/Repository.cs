@@ -10,16 +10,18 @@ namespace StudentConsoleApp
     {
         public Student[] students = new Student[10];
 
-        public void Add(Student student)
+        public int Add(Student student)
         {
-
+            for (int i = 0; i < students.Length; i++)
+            {
+                if (students[i] == null)
+                {
+                    students[i] = student;
+                    return i;
+                }              
+            }
+            return 0;
         }
-
-        internal string Add()
-        {
-            throw new NotImplementedException();
-        }
-
 
         internal string Delete()
         {
@@ -33,8 +35,5 @@ namespace StudentConsoleApp
         {
             throw new NotImplementedException();
         }
-
-
-        // *****
     }
 }

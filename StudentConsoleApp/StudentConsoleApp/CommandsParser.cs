@@ -32,77 +32,15 @@ namespace StudentsConsoleApp
             {
                 case "ADD":
                     return new AddComand(repository, parametrs);
-                default:
-                    return new Command(repository, parametrs);
-            }
-            {
-                if (string.IsNullOrEmpty(item) && index < parametrs.Length)
-                {
-                    parametrs[index] = item;
-                    index++;
-                }
-            }
-            switch (parametrs[0].ToUpper())
-            {
-                case "Delete":
+                case "DELETE":
                     return new DeleteComand(repository, parametrs);
-                default:
-                    return new Command(repository, parametrs);
-            }
-
-            {
-                if (string.IsNullOrEmpty(item) && index < parametrs.Length)
-                {
-                    parametrs[index] = item;
-                    index++;
-                }
-            }
-            switch (parametrs[0].ToUpper())
-            {
-                case "Edit":
+                case "EDIT":
                     return new EditComand(repository, parametrs);
-                default:
-                    return new Command(repository, parametrs);
-            }
-
-            {
-                if (string.IsNullOrEmpty(item) && index < parametrs.Length)
-                {
-                    parametrs[index] = item;
-                    index++;
-                }
-            }
-            switch (parametrs[0].ToUpper())
-            {
-                case "Get":
+                case "GET":
                     return new GetComand(repository, parametrs);
                 default:
                     return new Command(repository, parametrs);
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }
