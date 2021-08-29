@@ -8,5 +8,6 @@ namespace StudentConsoleApp
 {
     class Student
     {
+        public int Id { get; internal set; }
     }
 }
