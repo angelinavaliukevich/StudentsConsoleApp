@@ -8,7 +8,7 @@ namespace StudentConsoleApp
 {
     class Repository
     {
-        
+
         private byte NextId { get; set; }
         public int Id { get; private set; }
 
@@ -20,33 +20,96 @@ namespace StudentConsoleApp
             {
                 if (students[i] == null)
                 {
-                        student.Id = nextId;
-                    
-                     return nextId++;
+                    student.Id = nextId;
                     students[i] = student;
-                    return i;
-                }              
+                    return nextId++;
+                }
             }
             return 0;
         }
-        public int Delete(Student student)
+
+        internal string Add()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Edit(Student student)
         {
             for (int i = 0; i < students.Length; i++)
             {
-                if (students[i]?.Id == Id)
+                if (students[i].Id== students[i]?.Id)
                 {
-                    students[i].Id = 0;
+                    students[i].Update(student);
+                    return true;
                 }
-                return students[i].Id;
-                students[i] = student;
-                return i;
-
             }
+            return false;
+
         }
-        public int Edit(Student student)
+
+        internal bool Edit(object student)
         {
-
+            throw new NotImplementedException();
         }
 
+        public bool Delete ( Student student)
+        {
+            for (int i = 0; i < students.Length; i++)
+            {
+                if (student.Id == students[i]?.Id )
+                {
+                    students[i] = null;
+                    return true;
+                }
+            }
+            return false;
+        }
+        public Student Get (int id)
+        {
+            for (int i = 0; i < students.Length; i++)
+            {
+                if (id == students[i]?.Id)
+                {
+                    return students[i];
+                }
+            }
+            return null;
+        }
+        public Student[] Find (string substring)
+        {
+            Student[] result = new Student[students.Length];
+            int count = 0;
+
+            for (int i = 0; i < students.Length; i++)
+            {
+                if (students[i]?.Name?.Contains(substring, StringComparison.OrdinalIgnoreCase)== true||
+                    students[i]?.Surname?.Contains(substring, StringComparison.OrdinalIgnoreCase) == true)
+                {
+                    result[count++] = students[i];
+                }
+            }
+            Array.Resize(ref result, count);
+            return result;
+        }
+        public Student[] List()
+        {
+            Student[] result = new Student[students.Length];
+            int count = 0;
+
+            for (int i = 0; i < students.Length; i++)
+            { 
+                if (students[i]!= null)
+                {
+                    result[count++] = students[i];
+                }
+            }
+            Array.Resize(ref result, count);
+            return result;
+        }
+
+    }
+}
+
+       
 
        

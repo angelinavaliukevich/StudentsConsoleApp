@@ -32,6 +32,9 @@ namespace StudentsConsoleApp
             {
                 case "ADD":
                     return new AddComand(repository, parametrs);
+                    break;
+                default:
+                    return new Command(repository, parametrs);
                 case "DELETE":
                     return new DeleteComand(repository, parametrs);
                 case "EDIT":
