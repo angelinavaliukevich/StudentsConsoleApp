@@ -6,6 +6,7 @@ namespace StudentsConsoleApp
     internal class GetComand : Command
     {
         private Student student;
+        private object parameters;
 
         public GetComand(Repository repository, string[] parametrs) : base(repository, parametrs)
         {
@@ -14,15 +15,14 @@ namespace StudentsConsoleApp
         {
             string userText = Console.ReadLine();
             string[] parametrs = userText.Split(',');
+            {
+                var student = new[] { repository.Get(parameters) };
 
-            Student newStudent = new Student(
-                int.Parse(parametrs[1]),
-                parametrs[2],
-                 parametrs[3],
-                  parametrs[4],
-                  int.Parse(parametrs[5])
-                  );
-            bool result = repository.Edit(student);
+                if (student[0] is not null) ;
+            }
+
+           
+            bool result = (bool)repository.Get(student);
             return result ? "Получен" : $" Студент { parametrs[1]} Не найден ";
 
         }

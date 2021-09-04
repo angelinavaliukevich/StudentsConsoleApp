@@ -11,12 +11,27 @@ namespace StudentConsoleApp
         {
             private string[] parametrs;
             protected Repository repository;
-
+            protected IValidator validatotr;
+            
             public Command(Repository repository, string[] parametrs)
             {
                 this.parametrs = parametrs;
                 this.repository = repository;
             }
+        internal Response ExecuteWithValitation ()
+        {
+            if ( validatotr!=null)
+            {
+             if (validatotr.Validate())
+                {
+                    return Execute();
+                }
+             else
+                {
+                    return validatotr.ErrorMessage;
+                }
+            }
+        }
 
             public virtual string Execute()
             {

@@ -28,6 +28,16 @@ namespace StudentConsoleApp
             return 0;
         }
 
+        internal object Get(object parameters)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool Delete(object parameters)
+        {
+            throw new NotImplementedException();
+        }
+
         internal string Add()
         {
             throw new NotImplementedException();
