@@ -25,20 +25,14 @@ namespace StudentConsoleApp
                     return nextId++;
                 }
             }
-            return 0;
-        }
-
-        internal object Find(object parameters)
-        {
+        
+        
             throw new NotImplementedException();
         }
 
         internal object Get(object parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal bool Delete(object parameters)
+        
+          
         {
             throw new NotImplementedException();
         }
@@ -62,10 +56,7 @@ namespace StudentConsoleApp
 
         }
 
-        internal bool Edit(object student)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public bool Delete ( Student student)
         {

@@ -16,7 +16,7 @@ namespace StudentsConsoleApp
         public Command Parse(string input)
         {
             var inputArr = input.Split();
-            string[] parametrs = new string[4];
+            string[] parametrs = new string[1];
             int index = 0;
 
             foreach (var item in inputArr)
@@ -32,7 +32,6 @@ namespace StudentsConsoleApp
             {
                 case "ADD":
                     return new AddComand(repository, parametrs);
-                    break;
                 default:
                     return new Command(repository, parametrs);
                 case "DELETE":

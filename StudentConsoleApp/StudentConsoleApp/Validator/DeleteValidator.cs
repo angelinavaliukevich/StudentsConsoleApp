@@ -18,4 +18,4 @@ namespace StudentConsoleApp.Validator
             }
         }
     }
-}
+
