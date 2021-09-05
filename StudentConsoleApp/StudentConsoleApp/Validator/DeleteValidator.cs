@@ -8,8 +8,6 @@ namespace StudentConsoleApp.Validator
 {
   public class DeleteValidator : BaseValidator
     {
-        public class DeleteValidator : BaseValidator
-        {
             public DeleteValidator(string[] parameters) : base(parameters)
             {
             }

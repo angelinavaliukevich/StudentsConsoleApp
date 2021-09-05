@@ -28,6 +28,11 @@ namespace StudentConsoleApp
             return 0;
         }
 
+        internal object Find(object parameters)
+        {
+            throw new NotImplementedException();
+        }
+
         internal object Get(object parameters)
         {
             throw new NotImplementedException();
